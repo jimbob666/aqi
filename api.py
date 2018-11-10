@@ -177,7 +177,7 @@ if __name__ == "__main__":
 			print("There was an IndexRange error")
 			__name__ = ""
 
-
+	timestamp = time.strftime("%m.%d.%Y %H:%M:%S")
 
         # open stored data
 	with open('/var/www/html/aqi/aqi.json') as json_data:
@@ -188,8 +188,8 @@ if __name__ == "__main__":
             data.pop(0)
 
         # append new values
-        # NEW: data.append({'pm25': values[0], 'pm10': values[1], 'time': time.strftime("%m.%d.%Y %H:%M:%S")})
-        data.append({'pm25': values[0], 'pm10': values[1], 'time': time.strftime("%m.%d.%Y %H:%M:%S"), 'ext_ip': external_ip, 'int_ip': internal_ip})
+        data.append({'pm25': values[0], 'pm10': values[1], 'time': timestamp})
+        # Use for debugging if Google Doc does not work data.append({'pm25': values[0], 'pm10': values[1], 'time': time.strftime("%m.%d.%Y %H:%M:%S"), 'ext_ip': external_ip, 'int_ip': internal_ip})
 
         # save it
         with open('/var/www/html/aqi/aqi.json', 'w') as outfile:
@@ -247,7 +247,7 @@ if __name__ == "__main__":
 
 	## NEW: IFTT Section
 	IFTTT_WEBHOOKS_URL = 'https://maker.ifttt.com/trigger/aqi/with/key/' + iftt_key
-	
+
 	def post_ifttt_webhook():
 		ifttt_event_url = IFTTT_WEBHOOKS_URL.format()
 		# Sends a HTTP POST request to the webhook URL
