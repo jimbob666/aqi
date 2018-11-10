@@ -161,10 +161,11 @@ def cmd_set_id(id):
     ser.write(construct_command(CMD_DEVICE_ID, [0]*10+[id_l, id_h]))
     read_response()
 
-print("\nReading API Sensor")
-
 if __name__ == "__main__":
     while True:
+	timestamp = time.strftime("%m.%d.%Y %H:%M:%S")
+	print("\nReading AQI Sensor on " + timestamp) 
+
         cmd_set_sleep(0)
         cmd_set_mode(1);
         for t in range(15):
@@ -176,8 +177,6 @@ if __name__ == "__main__":
 		except IndexError:
 			print("There was an IndexRange error")
 			__name__ = ""
-
-	timestamp = time.strftime("%m.%d.%Y %H:%M:%S")
 
         # open stored data
 	with open('/var/www/html/aqi/aqi.json') as json_data:
