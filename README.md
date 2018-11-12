@@ -5,7 +5,7 @@ This is based on this project https://openschoolsolutions.org/measure-particulat
 Below are some additional features not included in the above project.<br>
 
 **1. Remote JSON File**<br>
-Copies .json files to GitHub page after each run. This allows for the viewing web UI to be viewed from anywhere. 
+Copies .json files to GitHub page after each run. This allows viewing of the web UI from anywhere as well as a bookmarkable page. 
 
 **2. Google Doc Support**<br>
 Each time the script runs it logs the results to a Google sheet. This allows you to chart over time how good or bad the air quality is. Also allows you to add notes to groups or runs like (Ran from person X's house)
