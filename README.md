@@ -35,7 +35,7 @@ https://www.amazon.com/Nest-T3007ES-Thermostat-Temperature-Generation/dp/B0131RG
 $16 Box Fan<br>
 https://www.amazon.com/Lasko-3733-20-Fan-Box/dp/B00002ND67/ref=sr_1_6?s=hi&ie=UTF8
 
-$51 Air Filter 20x20x1 MERV 13 - Box of 6 (Take to the box fan)<br>
+$51 Air Filter 20x20x1 MERV 13 - Box of 6 (Tape to the box fan)<br>
 https://www.amazon.com/gp/product/B01HTL3W02/ref=oh_aui_search_detailpage?ie=UTF8&psc=1
 <br><br><br>
 
