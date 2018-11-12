@@ -33,8 +33,9 @@ $200 Nest Thermostat (Also to trigger the house fan to help clear the air)
 https://www.amazon.com/Nest-T3007ES-Thermostat-Temperature-Generation/dp/B0131RG6VK/ref=sr_1_4?s=hi&ie=UTF8
 
 **Images**<br>
+RPI Zero + Air Sensor Setup (Optional standsard USB battery
+<img src=https://raw.githubusercontent.com/jimbob666/aqi/master/images/RPI_AQI.png height="50%" width="50%">
 
-<img src=https://raw.githubusercontent.com/jimbob666/aqi/master/images/RPI_AQI.png>
-
-<img src=https://raw.githubusercontent.com/jimbob666/aqi/master/images/Box%20Fan%20Hepa%20Filter.png>
+Option Hepa Box Fan
+<img src=https://raw.githubusercontent.com/jimbob666/aqi/master/images/Box%20Fan%20Hepa%20Filter.png height="50%" width="50%">
 
