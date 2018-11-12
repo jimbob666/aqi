@@ -32,6 +32,11 @@ https://www.amazon.com/Wemo-Smart-F7C063-RM2-Certified-Refurbished/dp/B079XWTJNH
 $200 Nest Thermostat (Also to trigger the house fan to help clean the air)<br>
 https://www.amazon.com/Nest-T3007ES-Thermostat-Temperature-Generation/dp/B0131RG6VK/ref=sr_1_4?s=hi&ie=UTF8
 
+$16 Box Fan<br>
+https://www.amazon.com/Lasko-3733-20-Fan-Box/dp/B00002ND67/ref=sr_1_6?s=hi&ie=UTF8
+
+$51 Air Filter 20x20x1 MERV 13 - Box of 6 (Take to the box fan)<br>
+https://www.amazon.com/gp/product/B01HTL3W02/ref=oh_aui_search_detailpage?ie=UTF8&psc=1<br>
 
 **Images**<br>
 RPI Zero + Air Sensor Setup (Optional standard USB battery)<br>
