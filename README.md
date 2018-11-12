@@ -16,6 +16,10 @@ If the AQI reaches a certain threshold it send a WebHook event to IFFF to do thi
 
 **4. External & Internal IP**<br>
 If going to run in different locations having the internal or external IP can be useful to help geo locate where the reading was taken or based on a certain IP or location to do something different. For example if running from home then IFTTT will trigger Nest fan where if elsewhere you may not want this. 
+
+TIP: If connecting to the RPI and you don't know the IP, you can SSH or VNC to it by its host name like below
+*rpizw.local.*
+
 <br><br><br>
 
 **Parts**<br>
