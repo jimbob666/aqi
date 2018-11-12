@@ -14,7 +14,7 @@ Each time the script runs it logs the results to a Google sheet. This allows you
 If the AQI reaches a certain threshold it send a WebHook event to IFFF to do things like turn your Nest Fan on or maybe a WebMo plug on to turn on (Or off) a Hepa Filter. 
 
 **4. External & Internal IP**<br>
-If going to run in different locations having the internal or external IP can be useful to help geo locate where the reading was taken or based on a certain IP or location to do something different. For example if running from home then IFTT will trigger Nest fan where if elsewhere you may not want this. 
+If going to run in different locations having the internal or external IP can be useful to help geo locate where the reading was taken or based on a certain IP or location to do something different. For example if running from home then IFTTT will trigger Nest fan where if elsewhere you may not want this. 
 
 
 **Parts**<br>
