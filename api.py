@@ -307,7 +307,7 @@ if __name__ == "__main__":
 
 
 	## NEW: IFTT Section
-	IFTTT_WEBHOOKS_URL = 'https://maker.ifttt.com/trigger/aqi_nest_fan/with/key/' + iftt_key
+	IFTTT_WEBHOOKS_URL = 'https://maker.ifttt.com/trigger/aqi/with/key/' + iftt_key
 
 	def post_ifttt_webhook():
 		ifttt_event_url = IFTTT_WEBHOOKS_URL.format()
