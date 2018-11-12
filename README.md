@@ -15,7 +15,7 @@ If the AQI reaches a certain threshold it send a WebHook event to IFFF to do thi
 
 **4. External & Internal IP**<br>
 If going to run in different locations having the internal or external IP can be useful to help geo locate where the reading was taken or based on a certain IP or location to do something different. For example if running from home then IFTTT will trigger Nest fan where if elsewhere you may not want this. 
-
+<br><br><br>
 
 **Parts**<br>
 $5 RPI Zero W<br>
@@ -23,7 +23,7 @@ https://www.microcenter.com/product/486575/raspberry-pi-zero-w
 
 $26 Air Sensor<br>
 https://www.amazon.com/gp/product/B07H1SJ819/ref=oh_aui_detailpage_o00_s00?ie=UTF8&psc=1
-
+<br><br>
 
 **Optional Parts**<br>
 $20 WeMo Smart Plug (To trigger turning on something like a hepa filter)<br>
@@ -36,7 +36,8 @@ $16 Box Fan<br>
 https://www.amazon.com/Lasko-3733-20-Fan-Box/dp/B00002ND67/ref=sr_1_6?s=hi&ie=UTF8
 
 $51 Air Filter 20x20x1 MERV 13 - Box of 6 (Take to the box fan)<br>
-https://www.amazon.com/gp/product/B01HTL3W02/ref=oh_aui_search_detailpage?ie=UTF8&psc=1<br>
+https://www.amazon.com/gp/product/B01HTL3W02/ref=oh_aui_search_detailpage?ie=UTF8&psc=1
+<br><br><br>
 
 **Images**<br>
 RPI Zero + Air Sensor Setup (Optional standard USB battery)<br>
