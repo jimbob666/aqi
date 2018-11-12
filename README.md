@@ -29,7 +29,7 @@ https://www.amazon.com/gp/product/B07H1SJ819/ref=oh_aui_detailpage_o00_s00?ie=UT
 $20 WeMo Smart Plug (To trigger turning on something like a hepa filter)
 https://www.amazon.com/Wemo-Smart-F7C063-RM2-Certified-Refurbished/dp/B079XWTJNH/ref=sr_1_6?s=lamps-light
 
-$200 Nest Thermostat (Also to trigger the house fan to help clear the air)
+$200 Nest Thermostat (Also to trigger the house fan to help clean the air)
 https://www.amazon.com/Nest-T3007ES-Thermostat-Temperature-Generation/dp/B0131RG6VK/ref=sr_1_4?s=hi&ie=UTF8
 
 
