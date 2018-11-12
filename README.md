@@ -18,7 +18,7 @@ If going to run in different locations having the internal or external IP can be
 <br><br><br>
 
 **Parts**<br>
-$5 RPI Zero W (Things I had laying around, 16gig mem card, power cord, and for setup only micro HDMI and keyboard/mouse)<br>
+$5 RPI Zero W (Things I had lying around, 16gig mem card, power cord, and for setup only micro HDMI and keyboard/mouse)<br>
 https://www.microcenter.com/product/486575/raspberry-pi-zero-w
 
 $1 USB Female to Micro USB (Needed for the Air senso USB to plug into the RPI Zero W)<br>
