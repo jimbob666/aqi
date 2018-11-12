@@ -22,7 +22,7 @@ $5 RPI Zero W<br>
 Things I had lying around that you may still need, 16gig mem card, USB power cord, USB battery, and for setup only micro HDMI and keyboard/mouse)<br>
 https://www.microcenter.com/product/486575/raspberry-pi-zero-w
 
-$1 USB Female to Micro USB (Needed for the Air senso USB to plug into the RPI Zero W)<br>
+$1 USB Female to Micro USB (Needed for the Air sensor USB to plug into the RPI Zero W)<br>
 https://www.amazon.com/gp/product/B071GTTW42/ref=oh_aui_detailpage_o02_s00?ie=UTF8&psc=1
 
 $26 Air Sensor<br>
