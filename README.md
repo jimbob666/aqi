@@ -34,7 +34,7 @@ https://www.amazon.com/Nest-T3007ES-Thermostat-Temperature-Generation/dp/B0131RG
 
 
 **Images**<br>
-RPI Zero + Air Sensor Setup (Optional standsard USB battery)<br>
+RPI Zero + Air Sensor Setup (Optional standard USB battery)<br>
 <img src=https://raw.githubusercontent.com/jimbob666/aqi/master/images/RPI_AQI.png height="50%" width="50%">
 
 Optional Hepa Box Fan<br>
