@@ -13,7 +13,7 @@ from config import github_token, iftt_key
 ## NEW:
 timestamp = time.strftime("%m.%d.%Y %H:%M:%S")
 #print (timestamp)
-print("Start Script on " + timestamp) 
+print("\nStart Script on " + timestamp) 
 
 
 ## NEW: pip install pygithub
@@ -162,9 +162,13 @@ def cmd_set_id(id):
     read_response()
 
 if __name__ == "__main__":
-    while True:
+
+	## NEW: Commented the below lines when running once and to run off cron that runs every 10min
+    #while True:
 	timestamp = time.strftime("%m.%d.%Y %H:%M:%S")
-	print("\nReading AQI Sensor on " + timestamp) 
+	#print("\nReading AQI Sensor on " + timestamp) 
+
+	print("\nReading AQI Sensor") 
 
         cmd_set_sleep(0)
         cmd_set_mode(1);
@@ -231,11 +235,56 @@ if __name__ == "__main__":
 	print("\nCoping aqi.json to GitHub - https://jimbob666.github.io/aqi/")
 
 
+	## NEW: Re-calc PM25 values (Like form the .JS code) here in Python so we can include this result in the Google doc. 
+	def calcaqipm25(pm25):
+		pm1 = 0
+		pm2 = 12
+		pm3 = 35.4
+		pm4 = 55.4
+		pm5 = 150.4
+		pm6 = 250.4
+		pm7 = 350.4
+		pm8 = 500.4
 
+		aqi1 = 0
+		aqi2 = 50
+		aqi3 = 100
+		aqi4 = 150
+		aqi5 = 200
+		aqi6 = 300
+		aqi7 = 400
+		aqi8 = 500
+
+		aqipm25 = 0
+
+		if (pm25 >= pm1 and pm25 <= pm2):
+			aqipm25 = ((aqi2 - aqi1) / (pm2 - pm1)) * (pm25 - pm1) + aqi1
+		elif (pm25 >= pm2 and pm25 <= pm3):
+			aqipm25 = ((aqi3 - aqi2) / (pm3 - pm2)) * (pm25 - pm2) + aqi2
+		elif (pm25 >= pm3 and pm25 <= pm4):
+			aqipm25 = ((aqi4 - aqi3) / (pm4 - pm3)) * (pm25 - pm3) + aqi3
+		elif (pm25 >= pm4 and pm25 <= pm5):
+			aqipm25 = ((aqi5 - aqi4) / (pm5 - pm4)) * (pm25 - pm4) + aqi4
+		elif (pm25 >= pm5 and pm25 <= pm6):
+			aqipm25 = ((aqi6 - aqi5) / (pm6 - pm5)) * (pm25 - pm5) + aqi5
+		elif (pm25 >= pm6 and pm25 <= pm7):
+			aqipm25 = ((aqi7 - aqi6) / (pm7 - pm6)) * (pm25 - pm6) + aqi6
+		elif (pm25 >= pm7 and pm25 <= pm8):
+			aqipm25 = ((aqi8 - aqi7) / (pm8 - pm7)) * (pm25 - pm7) + aqi7
+		return(int(round(aqipm25)))
+
+
+		
+	aqipm25_convert = calcaqipm25(float(values[0]))
+	aqipm10_convert = round(values[1])
+	
+	print("aqipm25 before = ", values[0], " | aqipm25 after = ", aqipm25_convert)
+	print("aqipm10 before = ", values[1], " | aqipm10 after = ", aqipm10_convert)
+		
 	## Update Google Doc Section
 	## Find a workbook by name and open the first sheet
 	sheet = client.open("AQI RPI").sheet1
-	row_values = [values[0], values[1], timestamp, external_ip, internal_ip]
+	row_values = [aqipm25_convert, aqipm10_convert, timestamp, external_ip, internal_ip, values[0], values[1]]
 	row_number = 2
 	result = sheet.insert_row(row_values, row_number)
 
@@ -245,25 +294,23 @@ if __name__ == "__main__":
 
 
 	## NEW: IFTT Section
-	IFTTT_WEBHOOKS_URL = 'https://maker.ifttt.com/trigger/aqi/with/key/' + iftt_key
+	IFTTT_WEBHOOKS_URL = 'https://maker.ifttt.com/trigger/aqi_nest_fan/with/key/' + iftt_key
 
 	def post_ifttt_webhook():
 		ifttt_event_url = IFTTT_WEBHOOKS_URL.format()
 		# Sends a HTTP POST request to the webhook URL
 		requests.post(ifttt_event_url)
-
-	pm10_trigger = values[1]
-
+	
 	# Send IFTT notification
-	if pm10_trigger > 10:
+	if aqipm25_convert > 60 or aqipm10_convert > 50 :
         	post_ifttt_webhook()
         	print("IFFF Trigger Sent")
 	else:
 	        print("No IFTT trigger Sent")
 
 
-        print("Going to sleep for 5min...\n")
+        ## NEW: Turn off when running once - print("Going to sleep for 5min...\n")
 
         cmd_set_mode(0);
         cmd_set_sleep()
-        time.sleep(300)
+        ## NEW: Turn off when running once - time.sleep(300)
