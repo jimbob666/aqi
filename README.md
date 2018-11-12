@@ -1,5 +1,5 @@
 <h2>RPI Air Quality Index (AQI) Project</h2>
-This is based on this project https://openschoolsolutions.org/measure-particulate-matter-with-a-raspberry-pi/
+This is based on this project https://openschoolsolutions.org/measure-particulate-matter-with-a-raspberry-pi/<br>
 
 
 Below are some additional features not included in the above project.<br>
