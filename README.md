@@ -32,7 +32,7 @@ https://www.amazon.com/Wemo-Smart-F7C063-RM2-Certified-Refurbished/dp/B079XWTJNH
 $200 Nest Thermostat (Also to trigger the house fan to help clear the air)
 https://www.amazon.com/Nest-T3007ES-Thermostat-Temperature-Generation/dp/B0131RG6VK/ref=sr_1_4?s=hi&ie=UTF8
 
-<br>
+
 **Images**<br>
 RPI Zero + Air Sensor Setup (Optional standsard USB battery)<br>
 <img src=https://raw.githubusercontent.com/jimbob666/aqi/master/images/RPI_AQI.png height="50%" width="50%">
