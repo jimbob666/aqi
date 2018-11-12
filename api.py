@@ -4,6 +4,19 @@
 # https://gist.github.com/kadamski/92653913a53baf9dd1a8
 from __future__ import print_function
 
+## NEW: Cron Setup
+#Not set to run every 5min anymore. Runs from cron due to an issue I kept having (See below link). Now if it errors out it will run again in 10min vs. the original script would exit. 
+# https://github.com/zefanja/aqi/issues/3
+# Cron setting below after you type "crontab -e" from the command line. 
+#
+# Run on start up once
+# @reboot cd /var/www/html/aqi && ./aqi.py
+# Run on start up every 10min
+# */10 * * * * cd /var/www/html/aqi && ./aqi.py
+
+## NEW: External Token (For Git) and Key (For IFTT) in the "config.py" file. 
+
+
 ## NEW: Added requests + github_token and iftt_key. Need to create "config.py to store token and key values. 
 #OLD Ver import serial, struct, sys, time, json
 import serial, struct, sys, time, json, requests
