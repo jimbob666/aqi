@@ -21,6 +21,9 @@ If going to run in different locations having the internal or external IP can be
 $5 RPI Zero W<br>
 https://www.microcenter.com/product/486575/raspberry-pi-zero-w
 
+$1 USB Female to Micro USB (Needed for the Air senso USB to plug into the RPI Zero W)<br>
+https://www.amazon.com/gp/product/B071GTTW42/ref=oh_aui_detailpage_o02_s00?ie=UTF8&psc=1
+
 $26 Air Sensor<br>
 https://www.amazon.com/gp/product/B07H1SJ819/ref=oh_aui_detailpage_o00_s00?ie=UTF8&psc=1
 <br><br>
