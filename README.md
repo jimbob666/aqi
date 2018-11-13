@@ -22,7 +22,7 @@ TIP: If connecting to the RPI and you don't know the IP you can SSH, VNC, or htt
 
 <br><br><br>
 
-**Parts**<br>
+**My Parts List**<br>
 $5 RPI Zero W<br>
 Things I had lying around that you may still need, 16gig mem card, USB power cord, USB battery, and for setup only micro HDMI and keyboard/mouse)<br>
 https://www.microcenter.com/product/486575/raspberry-pi-zero-w
@@ -44,7 +44,7 @@ https://www.amazon.com/Nest-T3007ES-Thermostat-Temperature-Generation/dp/B0131RG
 $16 Box Fan (Also to trigger to help clean the air)<br>
 https://www.amazon.com/Lasko-3733-20-Fan-Box/dp/B00002ND67/ref=sr_1_6?s=hi&ie=UTF8
 
-$51 Air Filter 20x20x1 MERV 13 - Box of 6 (Tape to the box fan)<br>
+$51 Box if 6 Air Filters 20x20x1 MERV 13 (Tape to the box fan)<br>
 https://www.amazon.com/gp/product/B01HTL3W02/ref=oh_aui_search_detailpage?ie=UTF8&psc=1
 <br><br><br>
 
