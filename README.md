@@ -23,8 +23,10 @@ TIP: If connecting to the RPI and you don't know the IP you can SSH, VNC, or htt
 <br><br><br>
 
 **My Parts List**<br>
+In my case I only had to buy the below 3 items and because I already had lying around a 16gig mem card, USB power cord, USB battery, and for setup only micro HDMI and keyboard/mouse<br>
+
 $5 RPI Zero W<br>
-Things I had lying around that you may still need, 16gig mem card, USB power cord, USB battery, and for setup only micro HDMI and keyboard/mouse)<br>
+<br>
 https://www.microcenter.com/product/486575/raspberry-pi-zero-w
 
 $1 USB Female to Micro USB (Needed for the Air sensor USB to plug into the RPI Zero W)<br>
@@ -35,7 +37,7 @@ https://www.amazon.com/gp/product/B07H1SJ819/ref=oh_aui_detailpage_o00_s00?ie=UT
 <br><br>
 
 **Optional Parts**<br>
-$20 WeMo Smart Plug (To trigger turning on something like a hepa filter)<br>
+$20 IFTT Smart Plug (Like a WeMo annd must support IFTT to trigger turning on something like a hepa filter)<br>
 https://www.amazon.com/Wemo-Smart-F7C063-RM2-Certified-Refurbished/dp/B079XWTJNH/ref=sr_1_6?s=lamps-light
 
 $200 Nest Thermostat (Also to trigger the house fan to help clean the air)<br>
