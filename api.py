@@ -90,8 +90,8 @@ CMD_FIRMWARE = 7
 CMD_WORKING_PERIOD = 8
 MODE_ACTIVE = 0
 MODE_QUERY = 1
-TRIGGER_THRESHOLD_PM10 = 10
-TRIGGER_THRESHOLD_PM25 = 10
+TRIGGER_THRESHOLD_PM10 = 15
+TRIGGER_THRESHOLD_PM25 = 15
 
 
 ser = serial.Serial()
@@ -287,13 +287,13 @@ if __name__ == "__main__":
 		return(int(round(aqipm25)))
 
 
-		
+
 	aqipm25_convert = calcaqipm25(float(values[0]))
 	aqipm10_convert = round(values[1])
-	
+
 	print("aqipm25 before = ", values[0], " | aqipm25 after = ", aqipm25_convert)
 	print("aqipm10 before = ", values[1], " | aqipm10 after = ", aqipm10_convert)
-		
+
 	## Update Google Doc Section
 	## Find a workbook by name and open the first sheet
 	sheet = client.open("AQI RPI").sheet1
@@ -315,7 +315,7 @@ if __name__ == "__main__":
 		requests.post(ifttt_event_url)
 	
 	# Send IFTT notification
-	if aqipm25_convert > 60 or aqipm10_convert > 50 :
+	if aqipm25_convert > TRIGGER_THRESHOLD_PM25 or aqipm10_convert > TRIGGER_THRESHOLD_PM10:
         	post_ifttt_webhook()
         	print("IFFF Trigger Sent")
 	else:
