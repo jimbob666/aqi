@@ -1,5 +1,5 @@
 function getData() {
-  fetch("/aqi2.json").then(response => {
+  fetch("https://jimbob666.github.io/aqi/aqi2.json").then(response => {
     response.json().then(data => {
       //console.log(data);
       updateHtml(data[data.length-1]);
