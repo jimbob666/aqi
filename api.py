@@ -4,6 +4,21 @@
 # https://gist.github.com/kadamski/92653913a53baf9dd1a8
 from __future__ import print_function
 
+# Last Update: 1/1/19
+
+# INSTALL ITEMS
+# pip install pygithub
+# pip install gspread
+# pip install oauth2client
+
+# Needed Files
+# aqi.py
+# config.py (GitHub & IFTT Secrets)
+# google-secret.json (Google Secret)
+
+
+# NEW - SEE GOOGLE SHEET NAMING BELOW
+
 ## NEW: Cron Setup
 #Not set to run every 5min anymore. Runs from cron due to an issue I kept having (See below link). Now if it errors out it will run again in 10min vs. the original script would exit. 
 # https://github.com/zefanja/aqi/issues/3
@@ -12,9 +27,26 @@ from __future__ import print_function
 # Run on start up once
 # @reboot cd /var/www/html/aqi && ./aqi.py
 # Run on start up every 10min
-# */10 * * * * cd /var/www/html/aqi && ./aqi.py
+# */10 * * * * cd /var/www/html/aqi && ./aqi.py > /tmp/log.log 2>&1
 
 ## NEW: External Token (For Git) and Key (For IFTT) in the "config.py" file. 
+
+
+## VARIABLES 
+AQI_DEVICE_ID = 1
+TRIGGER_THRESHOLD_PM10 = 25
+TRIGGER_THRESHOLD_PM25 = 25
+
+DEBUG = 0
+CMD_MODE = 2
+CMD_QUERY_DATA = 4
+CMD_DEVICE_ID = 5
+CMD_SLEEP = 6
+CMD_FIRMWARE = 7
+CMD_WORKING_PERIOD = 8
+MODE_ACTIVE = 0
+MODE_QUERY = 1
+
 
 
 ## NEW: Added requests + github_token and iftt_key. Need to create "config.py to store token and key values. 
@@ -40,7 +72,8 @@ from oauth2client.service_account import ServiceAccountCredentials
 
 ## NEW: use creds to create a client to interact with the Google Drive API
 scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
-creds = ServiceAccountCredentials.from_json_keyfile_name('AQI-RPI-Secret.json', scope)
+creds = ServiceAccountCredentials.from_json_keyfile_name('google-secret.json', scope)
+
 client = gspread.authorize(creds)
 
 
@@ -80,18 +113,17 @@ if __name__ == '__main__':
 
 
 
+# NEW Sleep for 2min to allow other aqi rpi to log info 2min sooner
+# NOT USED ON THIS ONE time.sleep(120)
 
-DEBUG = 0
-CMD_MODE = 2
-CMD_QUERY_DATA = 4
-CMD_DEVICE_ID = 5
-CMD_SLEEP = 6
-CMD_FIRMWARE = 7
-CMD_WORKING_PERIOD = 8
-MODE_ACTIVE = 0
-MODE_QUERY = 1
-TRIGGER_THRESHOLD_PM10 = 15
-TRIGGER_THRESHOLD_PM25 = 15
+# NEW create empty .json file to ram disk
+# Setup: 1 time only 
+# sudo nano /etc/fstab
+# Append: tmpfs /tmp tmpfs defaults,noatime,nosuid,size=4m 0 0
+# Reboot or remount: mount -a
+import os
+AQI_JSON = 'aqi' + str(AQI_DEVICE_ID) + '.json'
+os.system('echo [] > /tmp/' + AQI_JSON)
 
 
 ser = serial.Serial()
@@ -195,8 +227,11 @@ if __name__ == "__main__":
 			print("There was an IndexRange error")
 			__name__ = ""
 
-        # open stored data
-	with open('/var/www/html/aqi/aqi.json') as json_data:
+    # open stored data
+	# with open('/var/www/html/aqi/aqi.json') as json_data:
+	
+	# NEW Open via RAM disk
+	with open('/tmp/' + AQI_JSON) as json_data:
 		data = json.load(json_data)
 
         # check if length is more than 100 and delete first element
@@ -208,17 +243,23 @@ if __name__ == "__main__":
         # Use for debugging if Google Doc does not work data.append({'pm25': values[0], 'pm10': values[1], 'time': time.strftime("%m.%d.%Y %H:%M:%S"), 'ext_ip': external_ip, 'int_ip': internal_ip})
 
         # save it
-        with open('/var/www/html/aqi/aqi.json', 'w') as outfile:
+        # with open('/var/www/html/aqi/aqi.json', 'w') as outfile:
+        
+        # NEW Save to RAM disk
+        with open('/tmp/' + AQI_JSON, 'w') as outfile:
             json.dump(data, outfile)
 
 
 	## NEW: Copy aqi.json file to Github https://github.com/jimbob666/aqi
-
+	
+	# Change to Ram disk path
+	os.chdir('/tmp')
+	
 	token = github_token
 	g = Github(token)
 	repo = g.get_user().get_repo('aqi')
 	file_list = [
-    		'aqi.json'
+    		AQI_JSON
 	]
 	commit_message = 'Add simple regression analysis'
 	master_ref = repo.get_git_ref('heads/master')
@@ -245,7 +286,7 @@ if __name__ == "__main__":
         		commit = repo.update_file('/' + entry, 'Update PNG content', data, old_file.sha)
 
 
-	print("\nCoping aqi.json to GitHub - https://jimbob666.github.io/aqi/")
+	print("\nCoping " +  AQI_JSON + " to GitHub - https://jimbob666.github.io/aqi/")
 
 
 	## NEW: Re-calc PM25 values (Like form the .JS code) here in Python so we can include this result in the Google doc. 
@@ -296,12 +337,12 @@ if __name__ == "__main__":
 
 	## Update Google Doc Section
 	## Find a workbook by name and open the first sheet
-	sheet = client.open("AQI RPI").sheet1
+	sheet = client.open("AQI RPI").get_worksheet(AQI_DEVICE_ID - 1)
 	row_values = [aqipm25_convert, aqipm10_convert, timestamp, external_ip, internal_ip, values[0], values[1]]
 	row_number = 2
 	result = sheet.insert_row(row_values, row_number)
 
-	print("Updating Google Doc to http://bit.ly/aqi-rpi")
+	print("Updating Google Doc sheet " + str(AQI_DEVICE_ID) + " to http://bit.ly/aqi-rpi")
 
 
 
@@ -323,7 +364,6 @@ if __name__ == "__main__":
 
 
         ## NEW: Turn off when running once - print("Going to sleep for 5min...\n")
-
         cmd_set_mode(0);
         cmd_set_sleep()
         ## NEW: Turn off when running once - time.sleep(300)
