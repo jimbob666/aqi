@@ -1,5 +1,5 @@
 function getData() {
-  fetch("aqi.json").then(response => {
+  fetch("aqi1.json").then(response => {
     response.json().then(data => {
       //console.log(data);
       updateHtml(data[data.length-1]);
