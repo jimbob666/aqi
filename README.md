@@ -14,7 +14,10 @@ Each time the script runs it logs the results to a Google sheet. This allows you
 **3. IFTTT Support**<br>
 If the AQI reaches a certain threshold it send a WebHook event to IFFF to do things like turn your Nest Fan on or maybe a WebMo plug on to turn on (Or off) a Hepa Filter. 
 
-**4. External & Internal IP**<br>
+**4. Volatile Memory Support (aka Ram disk)**<br>
+Helps if you are doing things like routinely writing .json file and updating or erasing it, it's a good idea to use tmpfs in RAM. 
+
+**5. External & Internal IP**<br>
 If going to run in different locations having the internal or external IP can be useful to help geo locate where the reading was taken or based on a certain IP or location to do something different. For example if running from home then IFTTT will trigger Nest fan where if elsewhere you may not want this. 
 
 TIP: If connecting to the RPI and you don't know the IP you can SSH, VNC, or http to it by its host name like below (assuming you are on the same network)<br>
