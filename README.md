@@ -29,7 +29,6 @@ TIP: If connecting to the RPI and you don't know the IP you can SSH, VNC, or htt
 In my case I only had to buy the below 3 items and because I already had lying around a 16gig mem card, USB power cord, USB battery, and for setup only micro HDMI and keyboard/mouse<br>
 
 $5 RPI Zero W<br>
-<br>
 https://www.microcenter.com/product/486575/raspberry-pi-zero-w
 
 $1 USB Female to Micro USB (Needed for the Air sensor USB to plug into the RPI Zero W)<br>
