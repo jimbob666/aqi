@@ -59,6 +59,13 @@ RPI Zero + Air Sensor Setup (Optional standard USB battery)<br>
 Google Sheet Chart Example<br>
 <img src=https://raw.githubusercontent.com/jimbob666/aqi/master/images/Google%20Doc%20Chart%20View.png height="50%" width="50%">
 
+WeMo Smart Plug<br>
+<img src=https://images-na.ssl-images-amazon.com/images/I/41vGmSSapkL._SX679_.jpg height="50%" width="50%">
+
+Optional Hepa Box Fan<br>
+<img src=https://raw.githubusercontent.com/jimbob666/aqi/master/images/Box%20Fan%20Hepa%20Filter.png height="50%" width="50%">
+
+
 Optional Hepa Box Fan<br>
 <img src=https://raw.githubusercontent.com/jimbob666/aqi/master/images/Box%20Fan%20Hepa%20Filter.png height="50%" width="50%">
 
